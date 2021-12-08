@@ -5,7 +5,7 @@ const Footer = ({ copyright }) => {
   return (
     <footer>
       <p>
-        For More Information Visit{" "}
+        For more information visit:{" "}
         <a
           href="https://www.nasa.gov/"
           target="_blank"
@@ -14,7 +14,7 @@ const Footer = ({ copyright }) => {
           nasa.gov
         </a>
       </p>
-      <p>{copyright}</p>
+      <p>Copyright: {copyright}</p>
     </footer>
   );
 };

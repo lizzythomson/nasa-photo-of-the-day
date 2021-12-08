@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import fetchData from "./fetchData";
+import Header from "./components/Header";
+import ImageDisplay from "./components/ImageDisplay";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -40,42 +43,5 @@ function App() {
     </div>
   );
 }
-
-const Header = () => {
-  return (
-    <header>
-      <h1>NASA Astronomy Picture of the Day </h1>
-    </header>
-  );
-};
-
-const ImageDisplay = ({ hdurl, title, date, explanation }) => {
-  return (
-    <div>
-      <img src={hdurl} alt="NASA APOD" style={{ height: 200 }} />
-      <h2>{title}</h2>
-      <p>{date}</p>
-      <p>{explanation}</p>
-    </div>
-  );
-};
-
-const Footer = ({ copyright }) => {
-  return (
-    <footer>
-      <p>
-        For More Information Visit{" "}
-        <a
-          href="https://www.nasa.gov/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          nasa.gov
-        </a>
-      </p>
-      <p>{copyright}</p>
-    </footer>
-  );
-};
 
 export default App;
