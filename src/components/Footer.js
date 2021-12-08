@@ -5,16 +5,18 @@ const Footer = ({ copyright }) => {
   return (
     <footer>
       <p>
-        For more information visit:{" "}
-        <a
-          href="https://www.nasa.gov/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          nasa.gov
-        </a>
+        More Info:{"   "}
+        <button>
+          <a
+            href="https://www.nasa.gov/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            nasa.gov
+          </a>
+        </button>
       </p>
-      <p>Copyright: {copyright}</p>
+      <p className="copyright">Copyright: {copyright}</p>
     </footer>
   );
 };

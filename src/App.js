@@ -28,15 +28,20 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Header />
-        <input
-          type="date"
-          max={todaysDate}
-          value={dateValue}
-          onChange={(event) => {
-            setDateValue(event.target.value);
-          }}
-        />
+        <div className="header-container">
+          <Header />
+        </div>
+        <div className="date-finder">
+          <input
+            className="input"
+            type="date"
+            max={todaysDate}
+            value={dateValue}
+            onChange={(event) => {
+              setDateValue(event.target.value);
+            }}
+          />
+        </div>
         {data === null ? (
           <h2>Loading...</h2>
         ) : (
@@ -47,7 +52,9 @@ function App() {
               date={data.date}
               explanation={data.explanation}
             />
-            <Footer copyright={data.copyright} />
+            <div className="footer-container">
+              <Footer copyright={data.copyright} />
+            </div>
           </div>
         )}
       </div>

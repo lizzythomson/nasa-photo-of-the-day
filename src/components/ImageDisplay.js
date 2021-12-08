@@ -4,17 +4,21 @@ import "./ImageDisplay.css";
 const ImageDisplay = ({ hdurl, title, date, explanation }) => {
   return (
     <div>
-      <img src={hdurl} alt="NASA APOD" style={{ height: 200 }} />
-      <h2>{title}</h2>
-      <p>
-        {new Date(date).toLocaleString("default", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-          timeZone: "UTC",
-        })}
-      </p>
-      <p>{explanation}</p>
+      <div className="image-container">
+        <img src={hdurl} alt="NASA APOD" className="picture-of-the-day" />
+      </div>
+      <div className="text-container">
+        <h2>{title}</h2>
+        <p>
+          {new Date(date).toLocaleString("default", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+            timeZone: "UTC",
+          })}
+        </p>
+        <p>{explanation}</p>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,10 @@
+.header-container {
+  background-color: lightgrey;
+  padding: 0.8%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
