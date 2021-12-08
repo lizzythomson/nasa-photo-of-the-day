@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import fetchData from "./fetchData";
+// import fetchData from "./fetchData";
 import Header from "./components/Header";
 import ImageDisplay from "./components/ImageDisplay";
 import Footer from "./components/Footer";
@@ -12,11 +12,11 @@ function App() {
   const [dateValue, setDateValue] = useState(todaysDate);
 
   useEffect(() => {
-    fetchData()
-      // axios
-      //   .get(
-      //     `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
-      //   )
+    // fetchData()
+    axios
+      .get(
+        `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
+      )
       .then((response) => {
         setData(response.data);
       })
