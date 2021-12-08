@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: lightgrey;
+  background-color: aliceblue;
   padding: 0.8%;
   font-size: 90%;
 }
@@ -12,6 +12,9 @@ footer {
 
 .copyright {
   font-style: italic;
+}
+button:hover {
+  border: 2px black solid;
 }
 
 a {

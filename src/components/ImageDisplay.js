@@ -17,7 +17,9 @@ const ImageDisplay = ({ hdurl, title, date, explanation }) => {
             timeZone: "UTC",
           })}
         </p>
-        <p>{explanation}</p>
+        <div className="explanation">
+          <p>{explanation}</p>
+        </div>
       </div>
     </div>
   );
