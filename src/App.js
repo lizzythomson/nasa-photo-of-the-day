@@ -8,24 +8,35 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState(null);
+  const todaysDate = new Date().toISOString().split("T")[0];
+  const [dateValue, setDateValue] = useState(todaysDate);
 
   useEffect(() => {
     fetchData()
       // axios
-      //   .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+      //   .get(
+      //     `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
+      //   )
       .then((response) => {
-        console.log("Data: ", response.data);
         setData(response.data);
       })
       .catch((error) => {
         console.log("Error occurred in useEffect: ", error);
       });
-  }, []);
+  }, [dateValue]);
 
   return (
     <div className="App">
       <div>
         <Header />
+        <input
+          type="date"
+          max={todaysDate}
+          value={dateValue}
+          onChange={(event) => {
+            setDateValue(event.target.value);
+          }}
+        />
         {data === null ? (
           <h2>Loading...</h2>
         ) : (
