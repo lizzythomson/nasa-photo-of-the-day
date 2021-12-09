@@ -6,6 +6,13 @@ const StyledImageContainer = styled.div`
   justify-content: center;
 `;
 
+const StyledImage = styled.img`
+  margin: 3%;
+  box-shadow: 0px 3px 8px rgb(0 0 0 / 24%);
+  width: 60%;
+  border-radius: 10px;
+`;
+
 const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,7 +32,11 @@ const ImageDisplay = ({ hdurl, title, date, explanation }) => {
   return (
     <div>
       <StyledImageContainer>
-        <img src={hdurl} alt="NASA APOD" className="picture-of-the-day" />
+        <StyledImage
+          src={hdurl}
+          alt="NASA APOD"
+          className="picture-of-the-day"
+        />
       </StyledImageContainer>
       <StyledTextContainer>
         <h2>{title}</h2>

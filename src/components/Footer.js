@@ -11,6 +11,12 @@ const StyledCopyRight = styled.p`
   font-style: italic;
 `;
 
+const StyledButton = styled.button`
+  &:hover {
+    border: 2px black solid;
+  }
+`;
+
 const StyledATag = styled.a`
   text-decoration: none;
 `;
@@ -20,7 +26,7 @@ const Footer = ({ copyright }) => {
     <StyledFooter>
       <p>
         More Info:{"   "}
-        <button>
+        <StyledButton>
           <StyledATag
             href="https://www.nasa.gov/"
             target="_blank"
@@ -28,7 +34,7 @@ const Footer = ({ copyright }) => {
           >
             nasa.gov
           </StyledATag>
-        </button>
+        </StyledButton>
       </p>
       <StyledCopyRight>Copyright: {copyright}</StyledCopyRight>
     </StyledFooter>

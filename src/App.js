@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import fetchData from "./fetchData";
+// import fetchData from "./fetchData";
 import Header from "./components/Header";
 import ImageDisplay from "./components/ImageDisplay";
 import Footer from "./components/Footer";
-import "./App.css";
 import styled from "styled-components";
+
+const StyledBody = styled.div`
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+`;
 
 const StyledHeaderDiv = styled.div`
   background-color: aliceblue;
@@ -30,11 +34,11 @@ function App() {
   const [dateValue, setDateValue] = useState(todaysDate);
 
   useEffect(() => {
-    fetchData()
-      // axios
-      //   .get(
-      //     `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
-      //   )
+    // fetchData()
+    axios
+      .get(
+        `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
+      )
       .then((response) => {
         setData(response.data);
       })
@@ -44,7 +48,7 @@ function App() {
   }, [dateValue]);
 
   return (
-    <div className="App">
+    <StyledBody className="App">
       <div>
         <StyledHeaderDiv>
           <Header />
@@ -76,7 +80,7 @@ function App() {
           </div>
         )}
       </div>
-    </div>
+    </StyledBody>
   );
 }
 
