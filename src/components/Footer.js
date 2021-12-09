@@ -1,23 +1,38 @@
 import React from "react";
 import "./Footer.css";
+import styled from "styled-components";
+
+const StyledFooter = styled.footer`
+  display: flex;
+  justify-content: space-around;
+  margin: 1%;
+`;
+
+const StyledCopyRight = styled.p`
+  font-style: italic;
+`;
+
+const StyledATag = styled.a`
+  text-decoration: none;
+`;
 
 const Footer = ({ copyright }) => {
   return (
-    <footer>
+    <StyledFooter>
       <p>
         More Info:{"   "}
         <button>
-          <a
+          <StyledATag
             href="https://www.nasa.gov/"
             target="_blank"
             rel="noopener noreferrer"
           >
             nasa.gov
-          </a>
+          </StyledATag>
         </button>
       </p>
-      <p className="copyright">Copyright: {copyright}</p>
-    </footer>
+      <StyledCopyRight>Copyright: {copyright}</StyledCopyRight>
+    </StyledFooter>
   );
 };
 

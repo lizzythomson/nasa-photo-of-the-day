@@ -1,5 +1,6 @@
 import React from "react";
 import "./ImageDisplay.css";
+import styled from "styled-components";
 
 const ImageDisplay = ({ hdurl, title, date, explanation }) => {
   return (

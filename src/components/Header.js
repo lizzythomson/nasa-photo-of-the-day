@@ -1,11 +1,17 @@
 import React from "react";
-import "./Header.css";
+import styled from "styled-components";
+
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+`;
 
 const Header = () => {
   return (
-    <header>
+    <StyledHeader>
       <h1>NASA Astronomy Picture of the Day </h1>
-    </header>
+    </StyledHeader>
   );
 };
 

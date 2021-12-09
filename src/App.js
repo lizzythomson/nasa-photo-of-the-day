@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import fetchData from "./fetchData";
+import fetchData from "./fetchData";
 import Header from "./components/Header";
 import ImageDisplay from "./components/ImageDisplay";
 import Footer from "./components/Footer";
 import "./App.css";
+import styled from "styled-components";
+
+const StyledHeaderDiv = styled.div`
+  background-color: aliceblue;
+  padding: 0.8%;
+`;
+
+const StyledFooterDiv = styled.footer`
+  background-color: aliceblue;
+  padding: 0.8%;
+  font-size: 90%;
+`;
 
 function App() {
   const [data, setData] = useState(null);
@@ -12,11 +24,11 @@ function App() {
   const [dateValue, setDateValue] = useState(todaysDate);
 
   useEffect(() => {
-    // fetchData()
-    axios
-      .get(
-        `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
-      )
+    fetchData()
+      // axios
+      //   .get(
+      //     `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateValue}`
+      //   )
       .then((response) => {
         setData(response.data);
       })
@@ -28,9 +40,9 @@ function App() {
   return (
     <div className="App">
       <div>
-        <div className="header-container">
+        <StyledHeaderDiv>
           <Header />
-        </div>
+        </StyledHeaderDiv>
         <div className="date-finder">
           <input
             className="input"
@@ -52,9 +64,9 @@ function App() {
               date={data.date}
               explanation={data.explanation}
             />
-            <div className="footer-container">
+            <StyledFooterDiv>
               <Footer copyright={data.copyright} />
-            </div>
+            </StyledFooterDiv>
           </div>
         )}
       </div>
