@@ -1,14 +1,33 @@
 import React from "react";
-import "./ImageDisplay.css";
 import styled from "styled-components";
+
+const StyledImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledExplanation = styled.div`
+  width: 60%;
+  border: 2px lightslategray solid;
+  box-shadow: 0px 3px 8px rgb(0 0 0 / 24%);
+  border-radius: 10px;
+  padding: 3.5%;
+  margin: 3%;
+`;
 
 const ImageDisplay = ({ hdurl, title, date, explanation }) => {
   return (
     <div>
-      <div className="image-container">
+      <StyledImageContainer>
         <img src={hdurl} alt="NASA APOD" className="picture-of-the-day" />
-      </div>
-      <div className="text-container">
+      </StyledImageContainer>
+      <StyledTextContainer>
         <h2>{title}</h2>
         <p>
           {new Date(date).toLocaleString("default", {
@@ -18,10 +37,10 @@ const ImageDisplay = ({ hdurl, title, date, explanation }) => {
             timeZone: "UTC",
           })}
         </p>
-        <div className="explanation">
+        <StyledExplanation>
           <p>{explanation}</p>
-        </div>
-      </div>
+        </StyledExplanation>
+      </StyledTextContainer>
     </div>
   );
 };

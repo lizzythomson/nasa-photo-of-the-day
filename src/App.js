@@ -12,6 +12,12 @@ const StyledHeaderDiv = styled.div`
   padding: 0.8%;
 `;
 
+const StyledDateFinder = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5%;
+`;
+
 const StyledFooterDiv = styled.footer`
   background-color: aliceblue;
   padding: 0.8%;
@@ -43,7 +49,7 @@ function App() {
         <StyledHeaderDiv>
           <Header />
         </StyledHeaderDiv>
-        <div className="date-finder">
+        <StyledDateFinder>
           <input
             className="input"
             type="date"
@@ -53,7 +59,7 @@ function App() {
               setDateValue(event.target.value);
             }}
           />
-        </div>
+        </StyledDateFinder>
         {data === null ? (
           <h2>Loading...</h2>
         ) : (
